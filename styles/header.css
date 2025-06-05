@@ -1,0 +1,7 @@
+.back{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--color-brand);
+    font: var(--link);
+}
