@@ -32,8 +32,52 @@
   <body>
     <header class="container">
       <div class="logo">
-        <img src="" alt="" />
+        <img src="img/logo.svg" alt="logo-quicklist" />
+      </div>
+      <div>
+        <img src="img/mingcute_arrow-left-line.svg" alt="icon-seta" />
+        <span>Voltar</span>
       </div>
     </header>
+
+    <main class="container">
+      <section>
+        <form action="">
+          <h1>Compras da semana</h1>
+
+          <input
+            type="text"
+            id="name-item"
+            name="name-item"
+            placeholder="Adicione um novo item"
+            required
+          />
+
+          <button type="submit">Adicionar item</button>
+        </form>
+      </section>
+
+      <section class="list-items">
+        <ul>
+          <li class="item">
+            <div>
+              <input type="checkbox" id="check-item" name="checklist" />
+              <label for="name-item">Teste</label>
+            </div>
+
+            <img src="img/Frame(3).svg" alt="delete-icon" class="delete-item" />
+          </li>
+        </ul>
+      </section>
+
+      <div id="alert-remove">
+        <div>
+          <img src="img/warning-circle-filled.svg" alt="" />
+          <p>O item foi removido da lista</p>
+        </div>
+
+        <img src="img/delete-small.svg" alt="" />
+      </div>
+    </main>
   </body>
 </html>
