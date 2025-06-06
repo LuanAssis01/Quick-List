@@ -1,21 +1,26 @@
 .logo{
-    margin-bottom: 62px;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
 }
 
 .content-wrapper {
     width: 100%;
     max-width: 650px; /* Define uma largura máxima para o container */
-    border-radius: 16px;
     padding: 32px;
 }
 
 .back{
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
     color: var(--color-brand);
     font: var(--link);
-    margin-bottom: 24px;
+    margin-bottom: 1rem;
     cursor: pointer;
     width: fit-content;
+}
+
+.back img {
+    width: 1.2rem;
+    height: 1.2rem;
 }

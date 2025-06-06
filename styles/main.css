@@ -1,24 +1,30 @@
-.container section form h1{
+section form h1{
     font: var(--title);
-    margin-top: 16px;
     margin-bottom: 44px;
 }
 
+.send-form div{
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 .send-form input{
-    flex-grow: 1; /* Input ocupa o espaço disponível */
+    width: 70%;
     padding: 14px 16px;
-    border: 1px solid var(--border-primary);
-    border-radius: 8px;
-    font: var(--paragraph);
+    border: 2px solid var(--border-primary);
+    border-radius: 0.75rem;
+    font: var(--label);
 }
 
 .send-form button {
+    width: 30%;
     font: var(--label);
     color: var(--always-white);
     background-color: var(--color-brand);
     padding: 14px 24px;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.75rem;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 }
@@ -29,6 +35,8 @@
 
 .send-form{
     display: flex;
+    flex-direction: column;
+    width: 100%;
     gap: 16px;
 }
 
@@ -36,12 +44,17 @@
     color: var(--content-tertiary);
 }
 
+.send-form input:hover {
+    border-color: var(--border-hover);
+}
+
 .send-form input:focus {
-    outline: 1px solid var(--color-brand);
+    border: 2px solid var(--color-brand);
+    outline: none;
 }
 
 .list-items {
-    margin-top: 44px;
+    margin-top: 2.5rem;
 }
 
 .list-items ul {
@@ -56,8 +69,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    border: 1px solid var(--border-primary);
-    border-radius: 8px;
+    background-color: var(--background-secondary);
+    border-radius: 0.75rem;
     list-style: none;
 }
 
@@ -88,7 +101,7 @@
     width: 24px;
     height: 24px;
     border: 2px solid var(--border-primary);
-    border-radius: 50%;
+    border-radius: 40%;
     cursor: pointer;
     position: relative;
     transition: all 0.2s ease-in-out;
@@ -106,8 +119,8 @@
 .item input[type="checkbox"]:checked::after {
     content: '';
     position: absolute;
-    top: 3px;
-    left: 8px;
+    top: 2.8px;
+    left: 7px;
     width: 5px;
     height: 10px;
     border: solid var(--always-white);
@@ -127,7 +140,7 @@
     background-color: var(--color-danger);
     color: var(--always-white);
     padding: 16px;
-    border-radius: 8px;
+    border-radius: 0.75rem;
     margin-top: 36px;
 }
 
@@ -144,4 +157,23 @@
 
 #alert-remove > img {
     cursor: pointer;
+}
+
+@media (max-width: 638px) {
+    .send-form div {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .send-form input {
+        width: 100%;
+    }
+    .send-form button {
+        width: 100%;
+    }
+
+    .logo {
+        display: none;
+    }
 }
