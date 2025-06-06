@@ -17,50 +17,70 @@
 </head>
 
 <body>
-  <header class="container">
-    <div class="logo">
-      <img src="img/logo.svg" alt="logo-quicklist" />
-    </div>
 
+  <div class="logo">
+    <img src="img/logo.svg" alt="logo-quicklist" />
+  </div>
+  <div class="content-wrapper">
     <div class="back">
       <img src="img/mingcute_arrow-left-line.svg" alt="icon-seta" />
       <span>Voltar</span>
     </div>
-  </header>
 
-  <main class="container">
-    <section>
-      <form action="">
-        <h1>Compras da semana</h1>
+    <main class="container">
+      <section class="send-form">
+        <form action="">
+          <h1>Compras da semana</h1>
 
-        <input type="text" id="name-item" name="name-item" placeholder="Adicione um novo item" required />
+          <input type="text" id="name-item" name="name-item" placeholder="Adicione um novo item" required />
 
-        <button type="submit">Adicionar item</button>
-      </form>
-    </section>
+          <button type="submit">Adicionar item</button>
+        </form>
+      </section>
 
-    <section class="list-items">
-      <ul>
-        <li class="item">
-          <div>
-            <input type="checkbox" id="check-item" name="checklist" />
-            <label for="name-item">Teste</label>
-          </div>
+      <section class="list-items">
+        <ul>
+          <li class="item">
+            <div>
+              <input type="checkbox" id="check-item-1" name="checklist" />
+              <label for="check-item-1">Pão de forma</label>
+            </div>
+            <img src="img/Frame(3).svg" alt="delete-icon" class="delete-item" />
+          </li>
+          <li class="item">
+            <div>
+              <input type="checkbox" id="check-item-2" name="checklist" />
+              <label for="check-item-2">Café preto</label>
+            </div>
+            <img src="img/Frame(3).svg" alt="delete-icon" class="delete-item" />
+          </li>
+          <li class="item">
+            <div>
+              <input type="checkbox" id="check-item-3" name="checklist" />
+              <label for="check-item-3">Suco de laranja</label>
+            </div>
+            <img src="img/Frame(3).svg" alt="delete-icon" class="delete-item" />
+          </li>
+          <li class="item">
+            <div>
+              <input type="checkbox" id="check-item-4" name="checklist" />
+              <label for="check-item-4">Bolacha</label>
+            </div>
+            <img src="img/Frame(3).svg" alt="delete-icon" class="delete-item" />
+          </li>
+        </ul>
+      </section>
 
-          <img src="img/Frame(3).svg" alt="delete-icon" class="delete-item" />
-        </li>
-      </ul>
-    </section>
+      <div id="alert-remove">
+        <div>
+          <img src="img/warning-circle-filled.svg" alt="" />
+          <p>O item foi removido da lista</p>
+        </div>
 
-    <div id="alert-remove">
-      <div>
-        <img src="img/warning-circle-filled.svg" alt="" />
-        <p>O item foi removido da lista</p>
+        <img src="img/delete-small.svg" alt="" />
       </div>
-
-      <img src="img/delete-small.svg" alt="" />
-    </div>
-  </main>
+    </main>
+  </div>
 </body>
 
 </html>

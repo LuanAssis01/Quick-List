@@ -1,7 +1,21 @@
+.logo{
+    margin-bottom: 62px;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 650px; /* Define uma largura máxima para o container */
+    border-radius: 16px;
+    padding: 32px;
+}
+
 .back{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    gap: 8px;
     color: var(--color-brand);
     font: var(--link);
+    margin-bottom: 24px;
+    cursor: pointer;
+    width: fit-content;
 }

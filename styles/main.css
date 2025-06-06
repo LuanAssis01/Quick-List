@@ -1,4 +1,149 @@
-main section form h1{
+.container section form h1{
     font: var(--title);
-    color: var(--content-primary);
+    margin-top: 16px;
+    margin-bottom: 44px;
+}
+
+.send-form input{
+    flex-grow: 1; /* Input ocupa o espaço disponível */
+    padding: 14px 16px;
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    font: var(--paragraph);
+}
+
+.send-form button {
+    font: var(--label);
+    color: var(--always-white);
+    background-color: var(--color-brand);
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.send-form button:hover {
+    background-color: var(--color-brand-hover);
+}
+
+.send-form{
+    display: flex;
+    gap: 16px;
+}
+
+.send-form input::placeholder {
+    color: var(--content-tertiary);
+}
+
+.send-form input:focus {
+    outline: 1px solid var(--color-brand);
+}
+
+.list-items {
+    margin-top: 44px;
+}
+
+.list-items ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    list-style: none;
+}
+
+.item > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.item label {
+    font: var(--paragraph);
+    color: var(--content-secondary);
+}
+
+.delete-item {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.delete-item:hover {
+    opacity: 1;
+}
+
+.item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.item input[type="checkbox"]:hover {
+    border-color: var(--border-hover);
+}
+
+.item input[type="checkbox"]:checked {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+}
+
+/* Cria o "check" (✓) dentro da bolinha */
+.item input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--always-white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Risca o texto quando o item está marcado */
+.item input[type="checkbox"]:checked + label {
+   text-decoration: line-through;
+   color: var(--content-tertiary);
+}
+
+#alert-remove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-danger);
+    color: var(--always-white);
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 36px;
+}
+
+#alert-remove > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#alert-remove p {
+    font: var(--link);
+    font-weight: 500;
+}
+
+#alert-remove > img {
+    cursor: pointer;
 }
