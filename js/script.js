@@ -1,16 +1,19 @@
 const form = document.querySelector("form");
 const nameItem = document.getElementById("name-item");
 const list = document.querySelector("ul");
-const alert = document.getElementById("alert-remove");
+const alertRemove = document.getElementById("alert-remove");
 
 let items = [];
 
 form.onsubmit = (event) => {
   event.preventDefault();
 
+  if (nameItem.value.trim() === "") return;
+
   const item = {
     id: new Date().getTime(),
     name: nameItem.value,
+    completed: false,
     creatAt: new Date(),
   };
 
@@ -19,18 +22,33 @@ form.onsubmit = (event) => {
   render();
 };
 
+function toggleCompleted(id) {
+  items = items.map((item) => {
+    if (item.id === id) {
+      return { ...item, completed: !item.completed };
+    }
+    return item;
+  });
+  render();
+}
+
 function render() {
   try {
     list.innerHTML = "";
     for (const item of items) {
       const list_item = document.createElement("li");
       list_item.classList.add("item");
+      if (item.completed) {
+        list_item.classList.add("completed");
+      }
 
       const div = document.createElement("div");
 
       const input = document.createElement("input");
       input.type = "checkbox";
       input.classList.add("check-item");
+      input.checked = item.completed;
+      input.onchange = () => toggleCompleted(item.id);
 
       const label = document.createElement("label");
       label.textContent = item.name;
@@ -39,23 +57,31 @@ function render() {
       trashIcon.setAttribute("src", "img/Frame(3).svg");
       trashIcon.setAttribute("alt", "trash");
       trashIcon.classList.add("delete-item");
-
-      trashIcon.onclick = () => {
-        removeItem(item);
-      };
+      trashIcon.onclick = () => removeItem(item.id);
 
       list.append(list_item);
       list_item.append(div, trashIcon);
       div.append(input, label);
     }
   } catch (error) {
-    alert(error);
+    console.error(error);
   }
 }
 
-function removeItem(item) {
-  items = items.filter((i) => i.id !== item.id);
+function removeItem(id) {
+  items = items.filter((i) => i.id !== id);
   render();
+
+  alertRemove.classList.add("show");
+
+  setTimeout(() => {
+    alertRemove.classList.remove("show");
+  }, 3000);
 }
 
-list.addEventListener("click", (event) => {});
+const alertCloseIcon = alertRemove.querySelector(":scope > img");
+alertCloseIcon.onclick = () => {
+  alertRemove.classList.remove("show");
+};
+
+list.addEventListener("click", (event) => { });
