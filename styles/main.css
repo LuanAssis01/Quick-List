@@ -103,7 +103,6 @@
     border-color: var(--color-brand);
 }
 
-/* Cria o "check" (✓) dentro da bolinha */
 .item input[type="checkbox"]:checked::after {
     content: '';
     position: absolute;
@@ -116,7 +115,6 @@
     transform: rotate(45deg);
 }
 
-/* Risca o texto quando o item está marcado */
 .item input[type="checkbox"]:checked + label {
    text-decoration: line-through;
    color: var(--content-tertiary);
