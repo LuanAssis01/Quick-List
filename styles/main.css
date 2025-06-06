@@ -159,6 +159,10 @@ section form h1 {
   cursor: pointer;
 }
 
+#alert-remove.show {
+  display: flex;
+}
+
 @media (max-width: 638px) {
   .send-form div {
     flex-direction: column;
